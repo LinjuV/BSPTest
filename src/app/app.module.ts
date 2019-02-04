@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule ,MatInputModule} from '@angular/material';
+import { MatFormFieldModule ,MatInputModule, MatDividerModule,MatExpansionModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { CaseInfoComponent } from './case-info/case-info.component';
 import { AddressComponent } from './case-info/address/address.component';
@@ -13,6 +13,8 @@ import { CaseComponent } from './case-info/case/case.component';
 import {MatTableModule } from '@angular/material';
 
 const routes: Routes = [
+  { path: '', component : CaseComponent },
+  { path: 'caseInfo', component : CaseInfoComponent },
    { path: 'address', component : AddressComponent },
    { path: 'contact', component : ContactComponent },
    { path: 'groups', component : GroupComponent}
@@ -34,6 +36,8 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatDividerModule,
+    MatExpansionModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

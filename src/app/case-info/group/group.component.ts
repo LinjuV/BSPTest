@@ -8,12 +8,7 @@ import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class GroupComponent implements OnInit {
 
-  groups = this.fb.group(
-    {
-      groupName: [''],
-      grouptype: [''],
-      grpEffDate: ['']
-    });
+   count:number[]=[1,2];
 
   constructor(private fb: FormBuilder) { }
 
