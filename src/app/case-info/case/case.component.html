@@ -1,0 +1,31 @@
+<div>
+  <button class="align-add-case">Add Case</button>
+</div>
+<div class="row search-case-align">
+  <div class="col-sm-11"><input type="text" class="form-control " formControlName="searchCase"></div>
+  <div class="col-sm-1"><i role="button" class="search-icon-align fa fa-search" (click)="onSearch()"></i></div>
+</div>
+<div>
+
+  <table *ngIf="searchFlag" mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-align">
+    <ng-container matColumnDef="caseName">
+      <th mat-header-cell *matHeaderCellDef> Case Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.caseName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="einNumber">
+      <th mat-header-cell *matHeaderCellDef> EIN Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.einNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="caseEffDate">
+      <th mat-header-cell *matHeaderCellDef> Effective Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.caseEffDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="caseSttsCd">
+      <th mat-header-cell *matHeaderCellDef> State Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.caseSttsCd}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink = "/caseInfo"></tr>
+  </table>
+</div>

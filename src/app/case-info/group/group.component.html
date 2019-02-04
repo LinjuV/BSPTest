@@ -1,13 +1,84 @@
+<mat-accordion>
+        <mat-expansion-panel *ngFor="let x of count">
+          <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Group 1
+                </mat-panel-title> 
+         </mat-expansion-panel-header>                 
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Group Name">
         </mat-form-field>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="">
+            <input matInput placeholder="Group Type">
+        </mat-form-field>
+    </div>
+    
+    <div class="col-sm-2">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Group Effective Date">
         </mat-form-field>
     </div>
   </div>
+
+
+  <mat-divider></mat-divider>
   
+  
+  <div class="row">
+    <div class="col-sm-2">
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Medical Size">
+            </mat-form-field>
+    </div>
+    <div class="col-sm-2">
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="dental Size">
+            </mat-form-field>
+    </div>
+    <div class="col-sm-2">
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Vision Size">
+            </mat-form-field>
+    </div> 
+    <div class="col-sm-2">
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Total Employees">
+            </mat-form-field>
+    </div> 
+  </div>
+
+
+  <div class="row">
+        <div class="col-sm-2">
+                <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contract Code">
+                </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+                <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contract Status Code">
+                </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+                <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Coverage Type">
+                </mat-form-field>
+        </div> 
+        <div class="col-sm-2">
+                <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contract Name">
+                </mat-form-field>
+        </div>
+        <div class="col-sm-2">
+                <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contract Description">
+                </mat-form-field>
+        </div> 
+      </div>
+    </mat-expansion-panel>
+</mat-accordion>
+    
