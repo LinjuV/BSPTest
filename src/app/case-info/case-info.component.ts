@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, createPlatformFactory } from '@angular/core';
 
 @Component({
   selector: 'app-case-info',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaseInfoComponent implements OnInit {
 
+  case: any;
   constructor() { }
 
   ngOnInit() {
+    this.createViewForm();
   }
 
+  createViewForm() {
+    this.case = "A";
+  }
 }

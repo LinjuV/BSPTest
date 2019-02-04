@@ -1,3 +1,66 @@
-<p>
-  case-info works!
-</p>
+<mat-tab-group>
+    <mat-tab label="Address">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="AddressLine1" value="{{case.AddressLine1!=null?case.AddressLine1:''}}">
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="AddressLine2" value="{{case.AddressLine2!=null?case.AddressLine2:''}}">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="AddressLine3" value="{{case.AddressLine3!=null?case.AddressLine3:''}}">
+            </mat-form-field>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="city" value="{{case.city!=null?case.city:''}}">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="county" value="{{case.county!=null?case.county:''}}">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="stateCd" value="{{case.stateCd!=null?case.stateCd:''}}">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="zipCode" value="{{case.zipCode!=null?case.zipCode:''}}">
+                </mat-form-field>
+            </div>
+            </div>
+          </div>
+    </mat-tab>
+    <mat-tab label="Contact">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="emailId" value="{{case.emailId!=null?case.emailId:''}}">
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="faxNumber" value="{{case.faxNumber!=null?case.faxNumber:''}}">
+                  </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="telephoneNumber" value="{{case.telephoneNumber!=null?case.telephoneNumber:''}}">
+                  </mat-form-field>
+              </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
