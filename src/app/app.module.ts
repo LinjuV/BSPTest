@@ -9,8 +9,10 @@ import { ContactComponent } from './case-info/contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GroupComponent } from './case-info/group/group.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CaseComponent } from './case-info/case/case.component';
+import {MatTableModule } from '@angular/material';
 
-const routes : Routes = [
+const routes: Routes = [
    { path: 'address', component : AddressComponent },
    { path: 'contact', component : ContactComponent },
    { path: 'groups', component : GroupComponent}
@@ -22,14 +24,16 @@ const routes : Routes = [
     CaseInfoComponent,
     AddressComponent,
     ContactComponent,
-    GroupComponent
+    GroupComponent,
+    CaseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,   
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
