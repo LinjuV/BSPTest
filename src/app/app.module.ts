@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule ,MatInputModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { CaseInfoComponent } from './case-info/case-info.component';
 import { AddressComponent } from './case-info/address/address.component';
 import { ContactComponent } from './case-info/contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GroupComponent } from './case-info/group/group.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes : Routes = [
    { path: 'address', component : AddressComponent },
@@ -25,6 +27,9 @@ const routes : Routes = [
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,   
+    MatInputModule, 
     RouterModule.forRoot(routes)
   ],
   providers: [],
