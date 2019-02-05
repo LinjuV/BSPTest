@@ -1,0 +1,47 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let x of count">
+      <mat-expansion-panel-header>
+            <mat-panel-title>
+                Broker {{x}}
+            </mat-panel-title>
+     </mat-expansion-panel-header>
+<div class="row">
+<div class="col-sm-2">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Agent Tin">
+    </mat-form-field>
+</div>
+<div class="col-sm-2">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Parent Tin">
+    </mat-form-field>
+</div>
+<div class="col-sm-2">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Broker Type Code">
+    </mat-form-field>
+</div>
+</div>
+
+
+<mat-divider></mat-divider>
+
+
+<div class="row">
+<div class="col-sm-2">
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Percentage">
+        </mat-form-field>
+</div>
+<div class="col-sm-2">
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Coverage Type Code">
+        </mat-form-field>
+</div>
+
+</div>
+
+  <mat-divider></mat-divider>
+</mat-expansion-panel>
+</mat-accordion>
+

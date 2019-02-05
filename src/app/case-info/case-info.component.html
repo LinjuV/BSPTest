@@ -15,39 +15,39 @@
             <div class="row pt-1">
               <div class="col-sm-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Address Line 1" value="{{case.AddressLine1!=null?case.AddressLine1:''}}">
+                  <input matInput placeholder="Address Line 1">
                 </mat-form-field>
               </div>
               <div class="col-sm-4">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address Line 2" value="{{case.AddressLine2!=null?case.AddressLine2:''}}">
+                <input matInput placeholder="Address Line 2">
             </mat-form-field>
           </div>
           <div class="col-sm-4">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address Line 3" value="{{case.AddressLine3!=null?case.AddressLine3:''}}">
+                <input matInput placeholder="Address Line 3">
             </mat-form-field>
           </div>
           </div>
           <div class="row">
             <div class="col-sm-4">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="City" value="{{case.city!=null?case.city:''}}">
+                    <input matInput placeholder="City" >
                 </mat-form-field>
             </div>
             <div class="col-sm-4">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="County" value="{{case.county!=null?case.county:''}}">
+                    <input matInput placeholder="County">
                 </mat-form-field>
             </div>
             <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="State Code" value="{{case.stateCd!=null?case.stateCd:''}}">
+                    <input matInput placeholder="State Code">
                 </mat-form-field>
             </div>
             <div class="col-sm-2">
                 <mat-form-field class="example-full-width left-pad">
-                    <input matInput placeholder="Zip Code" value="{{case.zipCode!=null?case.zipCode:''}}">
+                    <input matInput placeholder="Zip Code">
                 </mat-form-field>
             </div>
 
@@ -59,17 +59,17 @@
             <div class="row pt-1">
               <div class="col-sm-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Email Id" value="{{case.emailId!=null?case.emailId:''}}">
+                  <input matInput placeholder="Email Id">
                 </mat-form-field>
               </div>
               <div class="col-sm-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Fax Number" value="{{case.faxNumber!=null?case.faxNumber:''}}">
+                    <input matInput placeholder="Fax Number">
                   </mat-form-field>
               </div>
               <div class="col-sm-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Telephone Number" value="{{case.telephoneNumber!=null?case.telephoneNumber:''}}">
+                    <input matInput placeholder="Telephone Number">
                   </mat-form-field>
               </div>
             </div>
@@ -82,5 +82,14 @@
       </div>
       <hr>
       </mat-tab>
+
+      <mat-tab label="Brokers">
+            <div class="container-fluid">
+              <app-brokers></app-brokers>
+            </div>
+            <hr>
+        </mat-tab>
+
+
 </mat-tab-group>
 

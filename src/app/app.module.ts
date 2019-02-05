@@ -11,6 +11,7 @@ import { GroupComponent } from './case-info/group/group.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CaseComponent } from './case-info/case/case.component';
 import { MatTableModule, MatTabsModule } from '@angular/material';
+import { BrokersComponent } from './case-info/brokers/brokers.component';
 
 
 const routes : Routes = [
@@ -29,7 +30,8 @@ const routes : Routes = [
     AddressComponent,
     ContactComponent,
     GroupComponent,
-    CaseComponent
+    CaseComponent,
+    BrokersComponent
   ],
   imports: [
     BrowserModule,
