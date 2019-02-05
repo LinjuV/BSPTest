@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CaseComponent } from './case-info/case/case.component';
 import { MatTableModule, MatTabsModule } from '@angular/material';
 import { BrokersComponent } from './case-info/brokers/brokers.component';
+import { BillingEntitiesComponent } from './case-info/billing-entities/billing-entities.component';
+import { HeaderComponent } from './case-info/header/header.component';
 
 
 const routes : Routes = [
@@ -32,6 +34,8 @@ const routes : Routes = [
     GroupComponent,
     CaseComponent,
     BrokersComponent
+    BillingEntitiesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class GroupComponent implements OnInit {
 
-   count:number[]=[1,2,3];
+   count: number[] = [1, 2, 3];
 
   constructor(private fb: FormBuilder) { }
 

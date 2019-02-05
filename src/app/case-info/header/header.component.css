@@ -1,0 +1,30 @@
+.logo {
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/images/logo.png");
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  height: 60px;
+  margin-left: 15px;
+}
+
+.header-background {
+  position: relative;
+  z-index: 1;
+  height: 60px;
+  width: 100%;
+}
+
+.shade-height {
+  height: 50px;
+  background: #E0E0E0;
+}
+
+.app-label {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 10px;
+  margin-top: 15px;
+  color: black;
+
+}
