@@ -1,0 +1,51 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let x of count">
+      <mat-expansion-panel-header>
+            <mat-panel-title>
+                Billing Entity {{x}}
+            </mat-panel-title>
+     </mat-expansion-panel-header>
+<div class="row">
+<div class="col-sm-4">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entity Effective Date">
+    </mat-form-field>
+</div>
+<div class="col-sm-4">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entity Name">
+    </mat-form-field>
+</div>
+
+<div class="col-sm-4">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Entity Type">
+    </mat-form-field>
+</div>
+</div>
+
+
+<mat-divider></mat-divider>
+
+
+<div class="row">
+<div class="col-sm-4">
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Entity Status Code">
+        </mat-form-field>
+</div>
+<div class="col-sm-4">
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Bill Copies Number">
+        </mat-form-field>
+</div>
+<div class="col-sm-4">
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Bill Frequency">
+        </mat-form-field>
+</div>
+</div>
+
+  <mat-divider></mat-divider>
+</mat-expansion-panel>
+</mat-accordion>
