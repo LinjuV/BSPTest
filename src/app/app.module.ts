@@ -33,7 +33,7 @@ const routes : Routes = [
     ContactComponent,
     GroupComponent,
     CaseComponent,
-    BrokersComponent
+    BrokersComponent,
     BillingEntitiesComponent,
     HeaderComponent
   ],

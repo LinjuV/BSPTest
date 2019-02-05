@@ -1,25 +1,27 @@
 <mat-accordion>
-        <mat-expansion-panel *ngFor="let x of count">
+    <div [formGroup]="caseInfo">
+        <div formArrayName="groups">
+        <mat-expansion-panel *ngFor="let item of groups.controls; let i=index" [formGroupName]="i">
           <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Group {{x}}
+                    Group {{i}}
                 </mat-panel-title>
          </mat-expansion-panel-header>
   <div class="row">
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Name">
+            <input matInput placeholder="Group Name" formControlName="groupName">
         </mat-form-field>
     </div>
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Type">
+            <input matInput placeholder="Group Type" formControlName="groupType">
         </mat-form-field>
     </div>
 
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Effective Date">
+            <input matInput placeholder="Group Effective Date" formControlName="grpEffDate" >
         </mat-form-field>
     </div>
   </div>
@@ -28,58 +30,59 @@
   <mat-divider></mat-divider>
 
 
-  <div class="row">
+  <div class="row" formGroupName="groupSize">
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Medical Size">
+                    <input matInput placeholder="Medical Size" formControlName="medicalSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="dental Size">
+                    <input matInput placeholder="dental Size" formControlName="dentalSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Vision Size">
+                    <input matInput placeholder="Vision Size" formControlName="visionSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Total Employees">
+                    <input matInput placeholder="Total Employees" formControlName="totalEmployees">
             </mat-form-field>
     </div>
   </div>
-
-
-  <div class="row">
+<div formArrayName="cntrcts">
+  <div class="row" *ngFor="let x of item.controls.cntrcts.controls; let i=index" [formGroupName]="i">
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Code">
+                        <input matInput placeholder="Contract Code" formControlName="cntrctCd">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Status Code">
+                        <input matInput placeholder="Contract Effective Date" formControlName="cntctEffDate">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Coverage Type">
+                        <input matInput placeholder="Coverage Type" formControlName="cvrgType">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Name">
+                        <input matInput placeholder="Contract Name" formControlName="cntrctName">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Description">
+                        <input matInput placeholder="Contract Description" formControlName="cntrctDesc"> 
                 </mat-form-field>
-        </div>
-      </div>
-
+        </div>      
+    </div>
+</div> 
       <mat-divider></mat-divider>
     </mat-expansion-panel>
+ </div>
+</div>
 </mat-accordion>

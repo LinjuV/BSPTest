@@ -1,84 +1,19 @@
-
-<!-- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li> <a class="router" routerLink="/address" routerLinkActive="active">Address</a></li>
-          <li> <a class="router" routerLink="/contact" routerLinkActive="active">Contact</a></li>
-          <li> <a class="router" routerLink="/groups" routerLinkActive="active">Groups</a></li>
-          <li> <a class="router" routerLink="/cases" routerLinkActive="active">Cases</a></li>
-        </ul>
-    </div>
-  </nav> -->
+<form [formGroup]="caseInfo">
 <mat-tab-group>
     <mat-tab label="Address">
         <div class="container-fluid">
-            <div class="row pt-1">
-              <div class="col-sm-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Address Line 1">
-                </mat-form-field>
-              </div>
-              <div class="col-sm-4">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address Line 2">
-            </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address Line 3">
-            </mat-form-field>
-          </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="City" >
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="County">
-                </mat-form-field>
-            </div>
-            <div class="col-sm-2">
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="State Code">
-                </mat-form-field>
-            </div>
-            <div class="col-sm-2">
-                <mat-form-field class="example-full-width left-pad">
-                    <input matInput placeholder="Zip Code">
-                </mat-form-field>
-            </div>
-
-            </div>
+           <app-address></app-address>
           </div>
     </mat-tab>
     <mat-tab label="Contact">
         <div class="container-fluid">
-            <div class="row pt-1">
-              <div class="col-sm-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Email Id">
-                </mat-form-field>
-              </div>
-              <div class="col-sm-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Fax Number">
-                  </mat-form-field>
-              </div>
-              <div class="col-sm-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Telephone Number">
-                  </mat-form-field>
-              </div>
-            </div>
+           <app-contact></app-contact>
         </div>
     </mat-tab>
 
     <mat-tab label="Groups">
       <div class="container-fluid">
-        <app-group></app-group>
+        <app-group [groups]="caseInfo.controls['groups']" [caseInfo]="caseInfo"></app-group>
       </div>
       <hr>
       </mat-tab>
@@ -98,4 +33,4 @@
           <hr>
           </mat-tab>
 </mat-tab-group>
-
+</form>

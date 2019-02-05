@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Groups } from './../../models/groups';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-group',
@@ -7,12 +8,13 @@ import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
-
-   count: number[] = [1, 2, 3];
-
+  count = [1,2];
   constructor(private fb: FormBuilder) { }
-
+  @Input('groups') groups: FormArray;
+  @Input('caseInfo') caseInfo: FormGroup;
+  
   ngOnInit() {
+  console.log(this.groups);
   }
 
 }
