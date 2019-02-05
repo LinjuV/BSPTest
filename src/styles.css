@@ -1,3 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-tab-label{
+  background: white;
+  /* color:black; */
+}
+/* focus style */
+.mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus{
+  background: white;
+  color: #0087c0;
+}
+/* ink bar style */
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  background: #0087c0;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  font-weight: bold;
+  color: #0087c0;
+}
+
+.mat-form-field-underline {
+  background-color: #0087c0 !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #0087c0 !important;
+}
+
+.mat-form-field {
+  line-height: 2.125;
+  border-color: #0087c0;
+  font-weight: 600;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #0087c0 !important;;
+}
