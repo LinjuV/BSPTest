@@ -2,12 +2,12 @@
 <mat-tab-group>
     <mat-tab label="Address">
         <div class="container-fluid">
-           <app-address></app-address>
+           <app-address [address]="caseInfo.controls['address']"></app-address>
           </div>
     </mat-tab>
     <mat-tab label="Contact">
         <div class="container-fluid">
-           <app-contact></app-contact>
+           <app-contact [contact]="caseInfo.controls['contact']" [caseInfo]="caseInfo"></app-contact>
         </div>
     </mat-tab>
 
@@ -20,7 +20,7 @@
 
       <mat-tab label="Brokers">
             <div class="container-fluid">
-              <app-brokers></app-brokers>
+              <app-brokers [brokers]="caseInfo.controls['brokers']" [caseInfo]="caseInfo"></app-brokers>
             </div>
             <hr>
         </mat-tab>
@@ -28,7 +28,7 @@
 
       <mat-tab label="Billing Entities">
           <div class="container-fluid">
-            <app-billing-entities></app-billing-entities>
+            <app-billing-entities [billingEntities]="caseInfo.controls['billingEntities']" [caseInfo]="caseInfo"></app-billing-entities>
           </div>
           <hr>
           </mat-tab>

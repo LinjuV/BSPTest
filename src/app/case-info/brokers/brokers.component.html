@@ -1,24 +1,26 @@
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let x of count">
+    <div [formGroup]="caseInfo">
+        <div formArrayName="brokers">
+    <mat-expansion-panel *ngFor="let item of brokers.controls; let i=index" [formGroupName]="i">
       <mat-expansion-panel-header>
             <mat-panel-title>
-                Broker {{x}}
+                Broker {{i}}
             </mat-panel-title>
      </mat-expansion-panel-header>
 <div class="row">
 <div class="col-sm-2">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Agent Tin">
+        <input matInput placeholder="Agent Tin" formControlName="agentTin">
     </mat-form-field>
 </div>
 <div class="col-sm-2">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Parent Tin">
+        <input matInput placeholder="Parent Tin" formControlName="parentTin">
     </mat-form-field>
 </div>
 <div class="col-sm-2">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Broker Type Code">
+        <input matInput placeholder="Broker Type Code" formControlName="brkrTypeCd">
     </mat-form-field>
 </div>
 </div>
@@ -30,12 +32,12 @@
 <div class="row">
 <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Percentage">
+                <input matInput placeholder="Percentage" formControlName="percentage">
         </mat-form-field>
 </div>
 <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Coverage Type Code">
+                <input matInput placeholder="Coverage Type Code" formControlName="cvrgTypeCd">
         </mat-form-field>
 </div>
 
@@ -43,5 +45,7 @@
 
   <mat-divider></mat-divider>
 </mat-expansion-panel>
+</div>
+</div>
 </mat-accordion>
 

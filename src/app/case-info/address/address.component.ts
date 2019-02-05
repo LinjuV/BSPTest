@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder,FormControl,FormGroup } from '@angular/forms';
 import { Address } from '../../models/address';
 
@@ -8,18 +8,7 @@ import { Address } from '../../models/address';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-
-  address = this.fb.group( 
-    {
-      addressLine1: [''],
-      addressLine2: [''],
-      addressLine3: [''],
-      city: [''],
-      county: [''],
-      stateCd:[''],
-      zipCode:['']
-    });
-
+  @Input('address') address:FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {

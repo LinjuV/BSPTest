@@ -1,25 +1,27 @@
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let x of count">
+    <div [formGroup]="caseInfo">
+        <div formArrayName="billingEntities">
+    <mat-expansion-panel *ngFor="let item of billingEntities.controls;let i=index" [formGroupName]="i">
       <mat-expansion-panel-header>
             <mat-panel-title>
-                Billing Entity {{x}}
+                Billing Entity {{i}}
             </mat-panel-title>
      </mat-expansion-panel-header>
 <div class="row">
 <div class="col-sm-4">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Effective Date">
+        <input matInput placeholder="Entity Effective Date" formControlName="billingEntityEffDate">
     </mat-form-field>
 </div>
 <div class="col-sm-4">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Name">
+        <input matInput placeholder="Entity Name" formControlName="billingEntityName">
     </mat-form-field>
 </div>
 
 <div class="col-sm-4">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Type">
+        <input matInput placeholder="Entity Type" formControlName="billingEntityType">
     </mat-form-field>
 </div>
 </div>
@@ -31,21 +33,23 @@
 <div class="row">
 <div class="col-sm-4">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Entity Status Code">
+                <input matInput placeholder="Entity Status Code" formControlName="billingEntitySttsCd">
         </mat-form-field>
 </div>
 <div class="col-sm-4">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Bill Copies Number">
+                <input matInput placeholder="Bill Copies Number" formControlName="billCopiesNbr">
         </mat-form-field>
 </div>
 <div class="col-sm-4">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Bill Frequency">
+                <input matInput placeholder="Bill Frequency" formControlName="billFrequency">
         </mat-form-field>
 </div>
 </div>
 
   <mat-divider></mat-divider>
 </mat-expansion-panel>
+</div>
+</div>
 </mat-accordion>

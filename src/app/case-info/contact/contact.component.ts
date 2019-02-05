@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,13 +7,8 @@ import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  contact = this.fb.group(
-    {
-      email: [''],
-      faxNumber: [''],
-      telephoneNumber: ['']
-    });
+  @Input('contact') contact:FormGroup;
+  @Input('caseInfo') caseInfo: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 

@@ -1,17 +1,19 @@
-<div class="row pt-1">
+<div [formGroup]="contact">
+<div class="row pt-1" >
         <div class="col-sm-4">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email Id">
+            <input matInput placeholder="Email Id" formControlName="emailId">
           </mat-form-field>
         </div>
         <div class="col-sm-4">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Fax Number">
+              <input matInput placeholder="Fax Number" formControlName="faxNumber">
             </mat-form-field>
         </div>
         <div class="col-sm-4">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Telephone Number">
+              <input matInput placeholder="Telephone Number" formControlName="telephoneNumber">
             </mat-form-field>
         </div>
       </div>
+</div>
