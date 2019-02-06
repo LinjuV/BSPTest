@@ -5,7 +5,7 @@
     border: none;
     color: white;
     margin-left: 35%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .search-case-align {
@@ -22,4 +22,9 @@
     width: 92%;
     margin-left: 57px;
     margin-top: 31px;
+}
+
+.header-font {
+    color: black;
+    font-size: 14px;
 }

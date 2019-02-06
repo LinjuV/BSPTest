@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CaseInfo } from '../../models/case-info';
+import { FormControl } from '@angular/forms';
 
 
 const ELEMENT_DATA: CaseInfo[] = [
@@ -18,15 +19,24 @@ export class CaseComponent implements OnInit {
 
   displayedColumns: string[] = ['caseName', 'einNumber', 'caseEffDate', 'caseSttsCd'];
   dataSource = ELEMENT_DATA;
+  searchCase: FormControl;
 
   searchFlag = false;
   constructor() { }
 
   ngOnInit() {
+    this.searchCase = new FormControl('');
   }
 
   onSearch() {
    this.searchFlag = true;
+   console.log(this.searchCase.value) ;
   }
+
+  // OnSearchKeyEntered(event) {
+  //   if ( event.target.value == '') {
+  //     this.searchFlag = false;
+  //   }
+  // }
 
 }

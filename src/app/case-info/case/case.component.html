@@ -2,26 +2,26 @@
   <button class="align-add-case" routerLink = "/caseInfo">Add Case</button>
 </div>
 <div class="row search-case-align">
-  <div class="col-sm-11"><input type="text" class="form-control " formControlName="searchCase"></div>
+  <div class="col-sm-11"><input type="text" class="form-control" [formControl]="searchCase" (keyup.enter)="onSearch()"></div>
   <div class="col-sm-1"><i role="button" class="search-icon-align fa fa-search" (click)="onSearch()"></i></div>
 </div>
 <div>
 
-  <table *ngIf="searchFlag" mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-align">
+  <table *ngIf="searchFlag && searchCase.value!='' && !(searchCase.value.length < 3) " mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-align">
     <ng-container matColumnDef="caseName">
-      <th mat-header-cell *matHeaderCellDef> Case Name </th>
+      <th mat-header-cell *matHeaderCellDef class="header-font"><b> Case Name </b></th>
       <td mat-cell *matCellDef="let element"> {{element.caseName}} </td>
     </ng-container>
-    <ng-container matColumnDef="einNumber">
-      <th mat-header-cell *matHeaderCellDef> EIN Number </th>
+    <ng-container matColumnDef="einNumber" >
+      <th mat-header-cell *matHeaderCellDef class="header-font"><b>EIN Number</b> </th>
       <td mat-cell *matCellDef="let element"> {{element.einNumber}} </td>
     </ng-container>
-    <ng-container matColumnDef="caseEffDate">
-      <th mat-header-cell *matHeaderCellDef> Effective Date </th>
+    <ng-container matColumnDef="caseEffDate" >
+      <th mat-header-cell *matHeaderCellDef class="header-font"><b> Effective Date</b> </th>
       <td mat-cell *matCellDef="let element"> {{element.caseEffDate}} </td>
     </ng-container>
     <ng-container matColumnDef="caseSttsCd">
-      <th mat-header-cell *matHeaderCellDef> State Code </th>
+      <th mat-header-cell *matHeaderCellDef class="header-font"><b>State Code</b> </th>
       <td mat-cell *matCellDef="let element"> {{element.caseSttsCd}} </td>
     </ng-container>
   
