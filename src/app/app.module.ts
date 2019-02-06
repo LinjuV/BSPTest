@@ -14,10 +14,12 @@ import { MatTableModule, MatTabsModule } from '@angular/material';
 import { BrokersComponent } from './case-info/brokers/brokers.component';
 import { BillingEntitiesComponent } from './case-info/billing-entities/billing-entities.component';
 import { HeaderComponent } from './case-info/header/header.component';
+import { AddsComponent } from './adds/adds.component';
 
 
 const routes : Routes = [
   { path: '', component : CaseComponent },
+  { path: 'adds', component : AddsComponent },
   { path: 'caseInfo', component : CaseInfoComponent },
    { path: 'address', component : AddressComponent },
    { path: 'contact', component : ContactComponent },
@@ -35,14 +37,15 @@ const routes : Routes = [
     CaseComponent,
     BrokersComponent,
     BillingEntitiesComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,   
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -55,4 +58,3 @@ const routes : Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 

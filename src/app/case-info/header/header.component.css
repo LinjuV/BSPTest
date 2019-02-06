@@ -17,7 +17,8 @@
 
 .shade-height {
   height: 50px;
-  background: #E0E0E0;
+  background: #F0F0F0;
+  padding-top: 25px;
 }
 
 .app-label {
@@ -26,5 +27,31 @@
   margin-left: 10px;
   margin-top: 15px;
   color: black;
+}
 
+.tabs {
+  margin-left: 100px;
+  margin-top: 5px;
+  margin-right: 35px;
+  text-align: left;
+  color: #0087c0;
+  font-size: 16px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.tabs-view {
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-right: 35px;
+  text-align: left;
+  color: #0087c0;
+  font-size: 16px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.tab-selected {
+  border-bottom-style: solid;
+  border-bottom-color: #0087c0;
 }
