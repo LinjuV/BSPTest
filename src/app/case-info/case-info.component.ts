@@ -1,6 +1,9 @@
 import { Component, OnInit, createPlatformFactory } from '@angular/core';
 import { CaseInfo } from '../models/case-info';
 import { fbind } from '../../../node_modules/@types/q';
+import { CaseInfo } from '../models/case-info';
+import { CaseInfo } from '../models/case-info';
+import { fbind } from '../../../node_modules/@types/q';
 import { createComponentFactory } from '../../../node_modules/@angular/core/src/view';
 import { group } from '../../../node_modules/@angular/animations';
 import {FormBuilder,FormControl,FormGroup,FormArray} from '@angular/forms';
@@ -48,25 +51,40 @@ export class CaseInfoComponent implements OnInit {
       billingEntities : this.fb.array([this.createBillingEntities()]),
       brokers : this.fb.array([this.createBrokers()])
     });
+    let arr:FormGroup[] = [];
+    this.caseInfoObject.billingEntities.forEach(element => {
+      arr.push(this.fb.group(element))
+    });
+    if(arr.length!=0) {
+      this.caseInfo.setControl('billingEntities',this.fb.array(arr||[]));
+    }
+    let arr2:FormGroup[] = [];
+    this.caseInfoObject.brokers.forEach(element => {
+      arr2.push(this.fb.group(element))
+    });
+    if(arr2.length!=0) {
+      this.caseInfo.setControl('brokers',this.fb.array(arr2||[]));
+    }
+    //this.caseInfo.controls['groups'].patchValue(this.caseInfoObject.groups);
   }
 
   createAddress() : FormGroup {
     return this.fb.group({
       addressLine1 : new FormControl(this.caseInfoObject.address.addressLine1),
-      addressLine2 : new FormControl(),
-      addressLine3 : new FormControl(),
-      city : new FormControl(),
-      county : new FormControl(),
-      stateCd : new FormControl(),
-      zipCode : new FormControl()
+      addressLine2 : new FormControl(this.caseInfoObject.address.addressLine2),
+      addressLine3 : new FormControl(this.caseInfoObject.address.addressLine3),
+      city : new FormControl(this.caseInfoObject.address.city),
+      county : new FormControl(this.caseInfoObject.address.county),
+      stateCd : new FormControl(this.caseInfoObject.address.stateCd),
+      zipCode : new FormControl(this.caseInfoObject.address.zipCode)
     });
   }
 
   createContact () : FormGroup{
     return this.fb.group({
-      emailId : new FormControl(),
-      faxNumber : new FormControl(),
-      telephoneNumber : new FormControl()
+      emailId : new FormControl(this.caseInfoObject.contact.emailId),
+      faxNumber : new FormControl(this.caseInfoObject.contact.faxNumber),
+      telephoneNumber : new FormControl(this.caseInfoObject.contact.telephoneNumber)
     });
   }
 
