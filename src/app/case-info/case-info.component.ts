@@ -30,7 +30,7 @@ export class CaseInfoComponent implements OnInit {
    let observable =  Observable.of(new CaseInfo).map(staticData1 => JSON.parse(this.staticData));
     observable.subscribe((data)=>{
       console.log(data); 
-      this.caseInfoObject = data;
+      this.caseInfoObject = data.caseInfo;
       console.log(this.caseInfoObject);
     });
     return observable;
