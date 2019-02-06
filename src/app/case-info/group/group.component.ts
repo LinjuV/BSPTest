@@ -17,4 +17,9 @@ export class GroupComponent implements OnInit {
   console.log(this.groups);
   }
 
+  getCntrcts(form){
+    console.log(form);
+    return form.controls.cntrcts.controls;
+  }
+
 }

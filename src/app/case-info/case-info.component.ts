@@ -1,15 +1,13 @@
+import { element } from 'protractor';
+import { GroupSize } from './../models/group-size';
+import { Groups } from './../models/groups';
 import { Component, OnInit, createPlatformFactory } from '@angular/core';
 import { CaseInfo } from '../models/case-info';
-import { fbind } from '../../../node_modules/@types/q';
-import { CaseInfo } from '../models/case-info';
-import { CaseInfo } from '../models/case-info';
-import { fbind } from '../../../node_modules/@types/q';
-import { createComponentFactory } from '../../../node_modules/@angular/core/src/view';
-import { group } from '../../../node_modules/@angular/animations';
 import {FormBuilder,FormControl,FormGroup,FormArray} from '@angular/forms';
 import { Observable } from 'rxjs';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
+import { Cntrcts } from '../models/cntrcts';
 
 @Component({
   selector: 'app-case-info',
@@ -65,7 +63,18 @@ export class CaseInfoComponent implements OnInit {
     if(arr2.length!=0) {
       this.caseInfo.setControl('brokers',this.fb.array(arr2||[]));
     }
-    //this.caseInfo.controls['groups'].patchValue(this.caseInfoObject.groups);
+    let arr3:FormGroup[] = [];
+    this.caseInfoObject.groups.forEach(element => {
+      arr3.push(this.createGroupForView(element)); 
+    });
+    console.log("arr3"+arr3);
+    if(arr3.length!=0) {
+      this.caseInfo.setControl('groups',this.fb.array(arr3||[]));
+    }
+    
+  
+    
+
   }
 
   createAddress() : FormGroup {
@@ -97,6 +106,23 @@ export class CaseInfoComponent implements OnInit {
       cntrcts : this.fb.array([this.createContract()])
     });
   }
+  createGroupForView(elem:Groups) : FormGroup{
+    return this.fb.group({
+      groupName : new FormControl(elem.groupName),
+      groupType : new FormControl(elem.groupType),
+      grpEffDate : new FormControl(elem.grpEffDate),
+      groupSize : this.createGroupSizeForView(elem.groupSize),
+      cntrcts : this.createContractArray(elem.cntrcts)
+    });
+  }
+  createContractArray(elem:Cntrcts[]){
+    let arr:FormGroup[] = [];
+  elem.forEach(element => {
+    arr.push(this.createContractForView(element))
+  });
+  console.log('cntrcts:'+arr);
+  return this.fb.array(arr);
+  }
 
   createGroupSize(): FormGroup{
     return this.fb.group({
@@ -107,6 +133,15 @@ export class CaseInfoComponent implements OnInit {
   });
 }
 
+createGroupSizeForView(elem:GroupSize): FormGroup{
+  return this.fb.group({
+    medicalSize : new FormControl(elem.medicalSize),
+    dentalSize : new FormControl(elem.dentalSize),
+    visionSize : new FormControl(elem.visionSize),
+    totalEmployees : new FormControl(elem.totalEmployees)
+});
+}
+
   createContract(): FormGroup{
     return this.fb.group({
       cntrctCd : new FormControl(),
@@ -114,6 +149,16 @@ export class CaseInfoComponent implements OnInit {
       cvrgType : new FormControl(),
       cntrctName : new FormControl(),
       cntrctDesc : new FormControl()
+    });
+  }
+
+  createContractForView(elem:Cntrcts): FormGroup{
+    return this.fb.group({
+      cntrctCd : new FormControl(elem.cntrctCd),
+      cntctEffDate : new FormControl(elem.cntctEffDate),
+      cvrgType : new FormControl(elem.cvrgType),
+      cntrctName : new FormControl(elem.cntrctName),
+      cntrctDesc : new FormControl(elem.cntrctDesc)
     });
   }
 
