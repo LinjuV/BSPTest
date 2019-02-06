@@ -1,9 +1,12 @@
 import { Component, OnInit, createPlatformFactory } from '@angular/core';
+import { CaseInfo } from '../models/case-info';
 import { fbind } from '../../../node_modules/@types/q';
 import { createComponentFactory } from '../../../node_modules/@angular/core/src/view';
 import { group } from '../../../node_modules/@angular/animations';
-import { CaseInfo } from '../models/case-info';
 import {FormBuilder,FormControl,FormGroup,FormArray} from '@angular/forms';
+import { Observable } from 'rxjs';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-case-info',
@@ -13,15 +16,29 @@ import {FormBuilder,FormControl,FormGroup,FormArray} from '@angular/forms';
 export class CaseInfoComponent implements OnInit {
 
   caseInfo : FormGroup;
+  caseInfoObject : CaseInfo;
   constructor(private fb: FormBuilder) { }
 
+  staticData : string = "{\"caseInfo\": {\"caseName\": \"Event Driven POC Case\",\"einNumber\": \"1234567890\",\"caseEffDate\": \"CA\",\"caseSttsCd\": \"CA\",\"address\": {\"addressLine1\": \"WoodLand Hills\",\"addressLine2\": \"OAK Street\",\"addressLine3\": \"CA\",\"city\": \"LA\",\"county\": \"County\",\"stateCd\": \"State\",\"zipCode\": \"10000\"},\"contact\": {\"emailId\": \"email@address.com\", \"faxNumber\": \"1231231212\", \"telephoneNumber\": \"123123123\" }, \"groups\": [{ \"groupName\": \"Group1\", \"groupType\": \"Active\", \"grpEffDate\": \"01/01/2019\", \"groupSize\": { \"medicalSize\": \"2\", \"dentalSize\": \"2\", \"visionSize\": \"3\", \"totalEmployees\": \"7\" }, \"cntrcts\": [{ \"cntrctCd\": \"CNTR1\", \"cntctEffDate\": \"01/01/2019\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" }, { \"cntrctCd\": \"CNTR1\", \"cntctEffDate\": \"01/01/2019\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\"} ] }, { \"groupName\": \"Group1\", \"groupType\": \"Active\", \"grpEffDate\": \"01/01/2019\", \"groupSize\": { \"medicalSize\": \"2\", \"dentalSize\": \"2\", \"visionSize\": \"3\", \"totalEmployees\": \"7\" }, \"cntrcts\": [{ \"cntrctCd\": \"CNTR1\", \"cntrctSttsCd\": \"MED\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" }, { \"cntrctCd\": \"CNTR1\", \"cntrctSttsCd\": \"MED\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" } ] } ], \"billingEntities\": [{ \"billingEntityEffDate\": \"01/01/2019\", \"billingEntityName\": \"BEName\", \"billingEntityType\": \"H\", \"billingEntitySttsCd\": \"A\", \"billCopiesNbr\": \"30\", \"billFrequency\": \"1\" }, { \"billingEntityEffDate\": \"01/01/2019\",\"billingEntityName\": \"BEName\",\"billingEntityType\": \"H\", \"billingEntitySttsCd\": \"A\", \"billCopiesNbr\": \"30\", \"billFrequency\": \"1\" } ], \"brokers\": [{ \"agentTin\": \"11111111\", \"parentTin\": \"22222222\", \"brkrTypeCd\": \"A\", \"percentage\": \"50\", \"cvrgTypeCd\": \"MED\" }, { \"agentTin\": \"11111111\", \"parentTin\": \"22222222\", \"brkrTypeCd\": \"A\", \"percentage\": \"50\", \"cvrgTypeCd\": \"MED\" } ] } }";
+
   ngOnInit() {
+    console.log(this.testmockData());
     this.createViewForm();
+  }
+
+  testmockData() {
+   let observable =  Observable.of(new CaseInfo).map(staticData1 => JSON.parse(this.staticData));
+    observable.subscribe((data)=>{
+      console.log(data); 
+      this.caseInfoObject = data;
+      console.log(this.caseInfoObject);
+    });
+    return observable;
   }
 
   createViewForm() {
     this.caseInfo = this.fb.group({
-      caseName : new FormControl(),
+      caseName : new FormControl(this.caseInfoObject.caseName),
       einNumber : new FormControl(),
       caseEffDate : new FormControl(),
       caseSttsCd : new FormControl(),
@@ -35,7 +52,7 @@ export class CaseInfoComponent implements OnInit {
 
   createAddress() : FormGroup {
     return this.fb.group({
-      addressLine1 : new FormControl(),
+      addressLine1 : new FormControl(this.caseInfoObject.address.addressLine1),
       addressLine2 : new FormControl(),
       addressLine3 : new FormControl(),
       city : new FormControl(),
