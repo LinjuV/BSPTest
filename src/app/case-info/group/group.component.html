@@ -52,8 +52,15 @@
             </mat-form-field>
     </div>
   </div>
+  <mat-accordion>
 <div formArrayName="cntrcts">
-  <div class="row" *ngFor="let x of item.controls.cntrcts.controls; let i=index" [formGroupName]="i">
+<mat-expansion-panel *ngFor="let x of item.controls.cntrcts.controls; let y=index" [formGroupName]="y">
+        <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Contract {{y}}
+                </mat-panel-title>
+         </mat-expansion-panel-header>
+  <div class="row">
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
                         <input matInput placeholder="Contract Code" formControlName="cntrctCd">
@@ -80,7 +87,9 @@
                 </mat-form-field>
         </div>      
     </div>
+</mat-expansion-panel>
 </div> 
+</mat-accordion>
       <mat-divider></mat-divider>
     </mat-expansion-panel>
  </div>
