@@ -16,8 +16,8 @@ import { Cntrcts } from '../models/cntrcts';
 })
 export class CaseInfoComponent implements OnInit {
 
-  caseInfo : FormGroup;
-  caseInfoObject : CaseInfo;
+  caseInfo: FormGroup;
+  caseInfoObject: CaseInfo;
   constructor(private fb: FormBuilder) { }
 
   staticData : string = "{\"caseInfo\": {\"caseName\": \"Event Driven POC Case\",\"einNumber\": \"1234567890\",\"caseEffDate\": \"CA\",\"caseSttsCd\": \"CA\",\"address\": {\"addressLine1\": \"WoodLand Hills\",\"addressLine2\": \"OAK Street\",\"addressLine3\": \"CA\",\"city\": \"LA\",\"county\": \"County\",\"stateCd\": \"State\",\"zipCode\": \"10000\"},\"contact\": {\"emailId\": \"email@address.com\", \"faxNumber\": \"1231231212\", \"telephoneNumber\": \"123123123\" }, \"groups\": [{ \"groupName\": \"Group1\", \"groupType\": \"Active\", \"grpEffDate\": \"01/01/2019\", \"groupSize\": { \"medicalSize\": \"2\", \"dentalSize\": \"2\", \"visionSize\": \"3\", \"totalEmployees\": \"7\" }, \"cntrcts\": [{ \"cntrctCd\": \"CNTR1\", \"cntctEffDate\": \"01/01/2019\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" }, { \"cntrctCd\": \"CNTR1\", \"cntctEffDate\": \"01/01/2019\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\"} ] }, { \"groupName\": \"Group1\", \"groupType\": \"Active\", \"grpEffDate\": \"01/01/2019\", \"groupSize\": { \"medicalSize\": \"2\", \"dentalSize\": \"2\", \"visionSize\": \"3\", \"totalEmployees\": \"7\" }, \"cntrcts\": [{ \"cntrctCd\": \"CNTR1\", \"cntrctSttsCd\": \"MED\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" }, { \"cntrctCd\": \"CNTR1\", \"cntrctSttsCd\": \"MED\", \"cvrgType\": \"P\", \"cntrctName\": \"P\", \"cntrctDesc\": \"P\" } ] } ], \"billingEntities\": [{ \"billingEntityEffDate\": \"01/01/2019\", \"billingEntityName\": \"BEName\", \"billingEntityType\": \"H\", \"billingEntitySttsCd\": \"A\", \"billCopiesNbr\": \"30\", \"billFrequency\": \"1\" }, { \"billingEntityEffDate\": \"01/01/2019\",\"billingEntityName\": \"BEName\",\"billingEntityType\": \"H\", \"billingEntitySttsCd\": \"A\", \"billCopiesNbr\": \"30\", \"billFrequency\": \"1\" } ], \"brokers\": [{ \"agentTin\": \"11111111\", \"parentTin\": \"22222222\", \"brkrTypeCd\": \"A\", \"percentage\": \"50\", \"cvrgTypeCd\": \"MED\" }, { \"agentTin\": \"11111111\", \"parentTin\": \"22222222\", \"brkrTypeCd\": \"A\", \"percentage\": \"50\", \"cvrgTypeCd\": \"MED\" } ] } }";
@@ -30,7 +30,7 @@ export class CaseInfoComponent implements OnInit {
   testmockData() {
    let observable =  Observable.of(new CaseInfo).map(staticData1 => JSON.parse(this.staticData));
     observable.subscribe((data)=>{
-      console.log(data); 
+      console.log(data);
       this.caseInfoObject = data.caseInfo;
       console.log(this.caseInfoObject);
     });
@@ -65,15 +65,15 @@ export class CaseInfoComponent implements OnInit {
     }
     let arr3:FormGroup[] = [];
     this.caseInfoObject.groups.forEach(element => {
-      arr3.push(this.createGroupForView(element)); 
+      arr3.push(this.createGroupForView(element));
     });
     console.log("arr3"+arr3);
     if(arr3.length!=0) {
       this.caseInfo.setControl('groups',this.fb.array(arr3||[]));
     }
-    
-  
-    
+
+
+
 
   }
 

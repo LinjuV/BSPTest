@@ -1,5 +1,11 @@
 <form [formGroup]="caseInfo">
 <mat-tab-group>
+    <mat-tab label="Case Info">
+        <div class="container-fluid">
+           <app-case-details [caseName]="caseInfoObject.caseName" [einNumber]="caseInfoObject.einNumber"
+           [caseEffDate]="caseInfoObject.caseEffDate" [caseSttsCd]="caseInfoObject.caseSttsCd"></app-case-details>
+          </div>
+    </mat-tab>
     <mat-tab label="Address">
         <div class="container-fluid">
            <app-address [address]="caseInfo.controls['address']"></app-address>

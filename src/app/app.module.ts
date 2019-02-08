@@ -15,6 +15,7 @@ import { BrokersComponent } from './case-info/brokers/brokers.component';
 import { BillingEntitiesComponent } from './case-info/billing-entities/billing-entities.component';
 import { HeaderComponent } from './case-info/header/header.component';
 import { AddsComponent } from './adds/adds.component';
+import { CaseDetailsComponent } from './case-info/case-details/case-details.component';
 
 
 const routes : Routes = [
@@ -38,7 +39,8 @@ const routes : Routes = [
     BrokersComponent,
     BillingEntitiesComponent,
     HeaderComponent,
-    AddsComponent
+    AddsComponent,
+    CaseDetailsComponent
   ],
   imports: [
     BrowserModule,
