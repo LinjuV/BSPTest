@@ -67,5 +67,5 @@
 </mat-accordion>
 <div>
 <button class="btn btn-primary btn-nav pull-right" type="submit"
-                        [disabled]="!caseInfo.valid" (click)="onSubmit()" [hidden]="type=='view'">Submit</button>
+                        [disabled]="!caseInfo.valid" (click)="onSubmit()" *ngIf="type!='view'">Submit</button>
 </div>
