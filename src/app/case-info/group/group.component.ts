@@ -25,7 +25,7 @@ export class GroupComponent implements OnInit {
   }
 
   addContracts(i){
-    let contracts = this.caseInfo.controls['groups'].controls[i].get('cntrcts') as FormArray;
+    let contracts = this.caseInfo.get('groups').controls[i].get('cntrcts') as FormArray;
     contracts.push(this.createContract());
   }
 
@@ -40,12 +40,12 @@ export class GroupComponent implements OnInit {
   }
 
   removeContract(cntrctIndex,grpindex){
-    let contracts = this.caseInfo.controls['groups'].controls[grpindex].get('cntrcts') as FormArray;
+    let contracts = this.caseInfo.get('groups').controls[grpindex].get('cntrcts') as FormArray;
     contracts.removeAt(cntrctIndex);
   }
 
   addGroups(){
-    let groups = this.caseInfo.controls['groups'] as FormArray;
+    let groups = this.caseInfo.get('groups') as FormArray;
     groups.push(this.createGroup());
   }
 
@@ -69,7 +69,7 @@ export class GroupComponent implements OnInit {
 }
 
 removeGroups(i){
-  let groups = this.caseInfo.controls['groups'] as FormArray;
+  let groups = this.caseInfo.get('groups') as FormArray;
   groups.removeAt(i);
 }
 
