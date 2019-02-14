@@ -8,18 +8,18 @@
             </mat-panel-title>
      </mat-expansion-panel-header>
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-2">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Entity Effective Date" formControlName="billingEntityEffDate">
     </mat-form-field>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-2">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Entity Name" formControlName="billingEntityName">
     </mat-form-field>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-2">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Entity Type" formControlName="billingEntityType">
     </mat-form-field>
@@ -31,25 +31,41 @@
 
 
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-2">
         <mat-form-field class="example-full-width">
                 <input matInput placeholder="Entity Status Code" formControlName="billingEntitySttsCd">
         </mat-form-field>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-2">
         <mat-form-field class="example-full-width">
                 <input matInput placeholder="Bill Copies Number" formControlName="billCopiesNbr">
         </mat-form-field>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-2">
         <mat-form-field class="example-full-width">
                 <input matInput placeholder="Bill Frequency" formControlName="billFrequency">
         </mat-form-field>
 </div>
+<div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
+        <a (click)="removeBillingEntity(i)" [hidden]="billingEntities.controls.length<2">Remove</a>
 </div>
+</div>
+
 
   <mat-divider></mat-divider>
 </mat-expansion-panel>
+<div class="row" [hidden]="type=='view'">
+                <div class="col col-sm-12">
+                        <a (click)="addBillingEnities()" class="add_contact_a btn-info btn-xs">
+                         Add more
+                        </a>
+                </div>
+        </div>
+
 </div>
 </div>
 </mat-accordion>
+<div>
+<button class="btn btn-primary btn-nav pull-right" type="submit"
+                        [disabled]="!caseInfo.valid" (click)="onSubmit()">Submit</button>
+</div>

@@ -40,11 +40,21 @@
                 <input matInput placeholder="Coverage Type Code" formControlName="cvrgTypeCd">
         </mat-form-field>
 </div>
+<div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
+        <a (click)="removeBroker(i)" [hidden]="brokers.controls.length<2">Remove</a>
+</div>
 
 </div>
 
   <mat-divider></mat-divider>
 </mat-expansion-panel>
+<div class="row">
+        <div class="col col-sm-12" [hidden]="type=='view'">
+                <a (click)="addBrokers()" class="add_contact_a btn-info btn-xs">
+                 Add more
+                </a>
+        </div>
+</div>
 </div>
 </div>
 </mat-accordion>

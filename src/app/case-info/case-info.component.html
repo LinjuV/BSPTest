@@ -2,8 +2,7 @@
 <mat-tab-group>
     <mat-tab label="Case Info">
         <div class="container-fluid">
-           <app-case-details [caseName]="caseInfoObject.caseName" [einNumber]="caseInfoObject.einNumber"
-           [caseEffDate]="caseInfoObject.caseEffDate" [caseSttsCd]="caseInfoObject.caseSttsCd"></app-case-details>
+           <app-case-details [caseInfo]="caseInfo"></app-case-details>
           </div>
     </mat-tab>
     <mat-tab label="Address">
@@ -13,20 +12,20 @@
     </mat-tab>
     <mat-tab label="Contact">
         <div class="container-fluid">
-           <app-contact [contact]="caseInfo.controls['contact']" [caseInfo]="caseInfo"></app-contact>
+           <app-contact [contact]="caseInfo.controls['contact']" [caseInfo]="caseInfo" ></app-contact>
         </div>
     </mat-tab>
 
     <mat-tab label="Groups">
       <div class="container-fluid">
-        <app-group [groups]="caseInfo.controls['groups']" [caseInfo]="caseInfo"></app-group>
+        <app-group [groups]="caseInfo.controls['groups']" [caseInfo]="caseInfo" [type]="type"></app-group>
       </div>
       <hr>
       </mat-tab>
 
       <mat-tab label="Brokers">
             <div class="container-fluid">
-              <app-brokers [brokers]="caseInfo.controls['brokers']" [caseInfo]="caseInfo"></app-brokers>
+              <app-brokers [brokers]="caseInfo.controls['brokers']" [caseInfo]="caseInfo"  [type]="type"></app-brokers>
             </div>
             <hr>
         </mat-tab>
@@ -34,7 +33,7 @@
 
       <mat-tab label="Billing Entities">
           <div class="container-fluid">
-            <app-billing-entities [billingEntities]="caseInfo.controls['billingEntities']" [caseInfo]="caseInfo"></app-billing-entities>
+            <app-billing-entities [billingEntities]="caseInfo.controls['billingEntities']" [caseInfo]="caseInfo"  [type]="type"></app-billing-entities>
           </div>
           <hr>
           </mat-tab>

@@ -51,6 +51,9 @@
                     <input matInput placeholder="Total Employees" formControlName="totalEmployees">
             </mat-form-field>
     </div>
+    <div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
+                <a (click)="removeGroups(i)" [hidden]="groups.controls.length<2">Remove</a>
+              </div>
   </div>
   <mat-accordion>
 <div formArrayName="cntrcts">
@@ -85,13 +88,30 @@
                 <mat-form-field class="example-full-width">
                         <input matInput placeholder="Contract Description" formControlName="cntrctDesc"> 
                 </mat-form-field>
-        </div>      
+        </div>
+       <div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
+        <a (click)="removeContract(y,i)" [hidden]="item.controls.cntrcts.controls.length<2">Remove</a>
+      </div>
     </div>
 </mat-expansion-panel>
+<div class="row" [hidden]="type=='view'">
+                <div class="col col-sm-12">
+                        <a (click)="addContracts(i)" class="add_contact_a btn-info btn-xs">
+                         Add Contract
+                        </a>
+                </div>
+        </div>
 </div> 
 </mat-accordion>
       <mat-divider></mat-divider>
     </mat-expansion-panel>
+    <div class="row" [hidden]="type=='view'">
+                <div class="col col-sm-12">
+                        <a (click)="addGroups()" class="add_contact_a btn-info btn-xs">
+                         Add Group
+                        </a>
+                </div>
+        </div>
  </div>
 </div>
 </mat-accordion>

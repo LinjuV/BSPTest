@@ -1,3 +1,43 @@
-<p>
-  adds works!
-</p>
+<form [formGroup]="caseInfo" >
+    <mat-tab-group>
+        <mat-tab label="Case Info">
+            <div class="container-fluid">
+               <app-case-details [caseInfo]="caseInfo"></app-case-details>
+              </div>
+        </mat-tab>
+        <mat-tab label="Address">
+            <div class="container-fluid">
+               <app-address [address]="caseInfo.controls['address']"></app-address>
+              </div>
+        </mat-tab>
+        <mat-tab label="Contact">
+            <div class="container-fluid">
+               <app-contact [contact]="caseInfo.controls['contact']" [caseInfo]="caseInfo"></app-contact>
+            </div>
+        </mat-tab>
+    
+        <mat-tab label="Groups">
+          <div class="container-fluid">
+            <app-group [groups]="caseInfo.controls['groups']" [caseInfo]="caseInfo" [type]="type"></app-group>
+          </div>
+          <hr>
+          </mat-tab>
+    
+          <mat-tab label="Brokers">
+                <div class="container-fluid">
+                  <app-brokers [brokers]="caseInfo.controls['brokers']" [caseInfo]="caseInfo" [type]="type"></app-brokers>
+                </div>
+                <hr>
+            </mat-tab>
+    
+    
+          <mat-tab label="Billing Entities">
+              <div class="container-fluid">
+                <app-billing-entities [billingEntities]="caseInfo.controls['billingEntities']" [caseInfo]="caseInfo" [type]="type"></app-billing-entities>
+              </div>
+              <hr>
+              </mat-tab>
+    </mat-tab-group>
+    
+    </form>
+    

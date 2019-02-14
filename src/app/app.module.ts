@@ -16,6 +16,7 @@ import { BillingEntitiesComponent } from './case-info/billing-entities/billing-e
 import { HeaderComponent } from './case-info/header/header.component';
 import { AddsComponent } from './adds/adds.component';
 import { CaseDetailsComponent } from './case-info/case-details/case-details.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 const routes : Routes = [
@@ -54,6 +55,7 @@ const routes : Routes = [
     MatTableModule,
     MatDividerModule,
     MatExpansionModule,
+    MatIconModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

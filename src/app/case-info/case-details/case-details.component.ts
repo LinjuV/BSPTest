@@ -7,10 +7,7 @@ import {FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./case-details.component.css']
 })
 export class CaseDetailsComponent implements OnInit {
-  @Input() caseName: string;
-  @Input() einNumber: string;
-  @Input() caseEffDate: string;
-  @Input() caseSttsCd: string;
+  @Input('caseInfo') caseInfo: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
