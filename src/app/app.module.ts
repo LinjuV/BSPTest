@@ -10,7 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { GroupComponent } from './case-info/group/group.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CaseComponent } from './case-info/case/case.component';
-import { MatTableModule, MatTabsModule } from '@angular/material';
+import { MatTableModule, MatTabsModule, MatNativeDateModule } from '@angular/material';
+import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { BrokersComponent } from './case-info/brokers/brokers.component';
 import { BillingEntitiesComponent } from './case-info/billing-entities/billing-entities.component';
 import { HeaderComponent } from './case-info/header/header.component';
@@ -58,6 +59,8 @@ const routes : Routes = [
     MatExpansionModule,
     MatIconModule,
     MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

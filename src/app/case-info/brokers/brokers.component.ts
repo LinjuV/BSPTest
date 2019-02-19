@@ -12,10 +12,11 @@ export class BrokersComponent implements OnInit {
   @Input('brokers') brokers:FormArray;
   @Input('caseInfo') caseInfo:FormGroup;
   @Input('type') type:string;
-  
+  isViewMode: boolean;
   constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
+    this.isViewMode = JSON.parse(sessionStorage.getItem('isViewMode'));
   }
 
   addBrokers(){

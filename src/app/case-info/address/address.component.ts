@@ -9,9 +9,11 @@ import { Address } from '../../models/address';
 })
 export class AddressComponent implements OnInit {
   @Input('address') address:FormGroup;
+  isViewMode: boolean;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.isViewMode = JSON.parse(sessionStorage.getItem('isViewMode'));
   }
 
 }

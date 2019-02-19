@@ -2,39 +2,39 @@
 <div class="row pt-1">
         <div class="col-sm-4">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address Line 1" formControlName="addressLine1">
+            <input [readonly]="isViewMode" matInput placeholder="Address Line 1" formControlName="addressLine1">
           </mat-form-field>
         </div>
         <div class="col-sm-4">
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="Address Line 2" formControlName="addressLine2">
+          <input [readonly]="isViewMode" matInput placeholder="Address Line 2" formControlName="addressLine2">
       </mat-form-field>
     </div>
     <div class="col-sm-4">
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="Address Line 3" formControlName="addressLine3">
+          <input [readonly]="isViewMode" matInput placeholder="Address Line 3" formControlName="addressLine3">
       </mat-form-field>
     </div>
     </div>
     <div class="row">
       <div class="col-sm-4">
           <mat-form-field class="example-full-width">
-              <input matInput placeholder="City"  formControlName="city">
+              <input [readonly]="isViewMode" matInput placeholder="City"  formControlName="city">
           </mat-form-field>
       </div>
       <div class="col-sm-4">
           <mat-form-field class="example-full-width">
-              <input matInput placeholder="County" formControlName="county">
+              <input [readonly]="isViewMode" matInput placeholder="County" formControlName="county">
           </mat-form-field>
       </div>
       <div class="col-sm-2">
           <mat-form-field class="example-full-width">
-              <input matInput placeholder="State Code" formControlName="stateCd">
+              <input [readonly]="isViewMode" matInput placeholder="State Code" formControlName="stateCd">
           </mat-form-field>
       </div>
       <div class="col-sm-2">
           <mat-form-field class="example-full-width left-pad">
-              <input matInput placeholder="Zip Code" formControlName="zipCode">
+              <input [readonly]="isViewMode" matInput placeholder="Zip Code" formControlName="zipCode">
           </mat-form-field>
       </div>
 

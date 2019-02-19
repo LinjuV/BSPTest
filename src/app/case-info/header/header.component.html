@@ -15,6 +15,6 @@
 </header>
 
 <section class="row shade-height">
-        <span><a routerLinkActive="tab-selected" routerLink="/adds" class="tabs">Adds</a></span>
-        <span><a routerLinkActive="tab-selected" routerLink="/caseInfo" class="tabs-view">View</a></span>
+        <span><a routerLinkActive="tab-selected" routerLink="/adds" class="tabs" (click)="setViewMode(false)">Adds</a></span>
+        <span><a routerLinkActive="tab-selected" routerLink="/caseInfo" class="tabs-view" (click)="setViewMode(true)">View</a></span>
   </section>

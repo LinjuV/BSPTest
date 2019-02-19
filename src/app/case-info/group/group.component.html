@@ -10,18 +10,21 @@
   <div class="row">
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Name" formControlName="groupName">
+            <input [readonly]="isViewMode" matInput placeholder="Group Name" formControlName="groupName">
         </mat-form-field>
     </div>
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Type" formControlName="groupType">
+            <input [readonly]="isViewMode" matInput placeholder="Group Type" formControlName="groupType">
         </mat-form-field>
     </div>
 
     <div class="col-sm-2">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Group Effective Date" formControlName="grpEffDate" >
+                        <input [readonly]="isViewMode" matInput [matDatepicker]="picker" placeholder="Group Effective Date" formControlName="grpEffDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+            <!-- <input matInput placeholder="Group Effective Date" formControlName="grpEffDate" > -->
         </mat-form-field>
     </div>
   </div>
@@ -33,22 +36,22 @@
   <div class="row" formGroupName="groupSize">
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Medical Size" formControlName="medicalSize">
+                    <input [readonly]="isViewMode" matInput placeholder="Medical Size" formControlName="medicalSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="dental Size" formControlName="dentalSize">
+                    <input [readonly]="isViewMode" matInput placeholder="dental Size" formControlName="dentalSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Vision Size" formControlName="visionSize">
+                    <input [readonly]="isViewMode" matInput placeholder="Vision Size" formControlName="visionSize">
             </mat-form-field>
     </div>
     <div class="col-sm-2">
             <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Total Employees" formControlName="totalEmployees">
+                    <input [readonly]="isViewMode" matInput placeholder="Total Employees" formControlName="totalEmployees">
             </mat-form-field>
     </div>
     <div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
@@ -66,27 +69,30 @@
   <div class="row">
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Code" formControlName="cntrctCd">
+                        <input [readonly]="isViewMode" matInput placeholder="Contract Code" formControlName="cntrctCd">
+                </mat-form-field>
+        </div>
+        <div class="col-sm-2" >
+                <mat-form-field style="width: 178px;" class="example-full-width">
+                                <input [readonly]="isViewMode" matInput [matDatepicker]="pick" placeholder="Contract Effective Date" formControlName="cntctEffDate">
+                                <mat-datepicker-toggle matSuffix [for]="pick"></mat-datepicker-toggle>
+                                <mat-datepicker #pick></mat-datepicker>
+                        <!-- <input matInput placeholder="Contract Effective Date" formControlName="cntctEffDate"> -->
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Effective Date" formControlName="cntctEffDate">
+                        <input [readonly]="isViewMode" matInput placeholder="Coverage Type" formControlName="cvrgType">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Coverage Type" formControlName="cvrgType">
+                        <input [readonly]="isViewMode" matInput placeholder="Contract Name" formControlName="cntrctName">
                 </mat-form-field>
         </div>
         <div class="col-sm-2">
                 <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Name" formControlName="cntrctName">
-                </mat-form-field>
-        </div>
-        <div class="col-sm-2">
-                <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Contract Description" formControlName="cntrctDesc"> 
+                        <input [readonly]="isViewMode" matInput placeholder="Contract Description" formControlName="cntrctDesc"> 
                 </mat-form-field>
         </div>
        <div class="col-sm-2" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">

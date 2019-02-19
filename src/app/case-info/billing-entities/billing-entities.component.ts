@@ -18,9 +18,11 @@ export class BillingEntitiesComponent implements OnInit {
   enabledIndex:number;
   productMap = new Map();
   caseInfoRequest : CaseInfo = new CaseInfo();
+  isViewMode: boolean;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.isViewMode = JSON.parse(sessionStorage.getItem('isViewMode'));
     let groups = this.caseInfo.controls['groups'].value;
     let s:string ;
     groups[0].cntrcts[0].cntrctCd;
@@ -48,8 +50,7 @@ export class BillingEntitiesComponent implements OnInit {
     });
     console.log(this.products);
   }
-  }
-
+}
   onSubmit(){
     console.log(this.caseInfo);
     this.caseInfoRequest = this.caseInfo.value;

@@ -12,4 +12,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  setViewMode(event) {
+    // const caseInfo = JSON.parse(sessionStorage.getItem('caseInfo'));
+    const isViewMode = event;
+    sessionStorage.setItem('isViewMode', JSON.stringify(isViewMode));
+  }
+
 }

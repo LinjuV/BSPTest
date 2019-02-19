@@ -12,35 +12,38 @@
 <div class="row">
 <div class="col-sm-1 margin-mat-form-field">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Effective Date" formControlName="billingEntityEffDate">
+                <input [readonly]="isViewMode" matInput [matDatepicker]="picker" placeholder="Entity Effective Date" formControlName="billingEntityEffDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+        <!-- <input matInput placeholder="Entity Effective Date" formControlName="billingEntityEffDate"> -->
     </mat-form-field>
 </div>
 <div class="col-sm-1 margin-mat-form-field">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Name" formControlName="billingEntityName">
+        <input [readonly]="isViewMode" matInput placeholder="Entity Name" formControlName="billingEntityName">
     </mat-form-field>
 </div>
 
 <div class="col-sm-1 margin-mat-form-field">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Entity Type" formControlName="billingEntityType">
+        <input [readonly]="isViewMode" matInput placeholder="Entity Type" formControlName="billingEntityType">
     </mat-form-field>
 </div>
 </div>
 <div class="row">
 <div class="col-sm-1 margin-mat-form-field">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Entity Status Code" formControlName="billingEntitySttsCd">
+                <input [readonly]="isViewMode" matInput placeholder="Entity Status Code" formControlName="billingEntitySttsCd">
         </mat-form-field>
 </div>
 <div class="col-sm-1 margin-mat-form-field">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Bill Copies Number" formControlName="billCopiesNbr">
+                <input [readonly]="isViewMode" matInput placeholder="Bill Copies Number" formControlName="billCopiesNbr">
         </mat-form-field>
 </div>
 <div class="col-sm-1 margin-mat-form-field">
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="Bill Frequency" formControlName="billFrequency">
+                <input [readonly]="isViewMode" matInput placeholder="Bill Frequency" formControlName="billFrequency">
         </mat-form-field>
 </div>
 <div class="col-sm-1" style="padding-top: 36px;padding-left: 45px;" [hidden]="type=='view'">
