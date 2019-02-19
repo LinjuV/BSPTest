@@ -12,9 +12,11 @@ export class BillingEntitiesComponent implements OnInit {
   @Input('billingEntities') billingEntities:FormArray;
   @Input('caseInfo') caseInfo:FormGroup;
   @Input('type') type:string;
+  isViewMode: boolean;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.isViewMode = JSON.parse(sessionStorage.getItem('isViewMode'));
   }
 
   onSubmit(){

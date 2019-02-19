@@ -33,6 +33,12 @@ export class CaseComponent implements OnInit {
    console.log(this.searchCase.value) ;
   }
 
+  setViewMode(event) {
+    let isViewMode = JSON.parse(sessionStorage.getItem('caseInfo'));
+     isViewMode = event;
+    sessionStorage.setItem('isViewMode', JSON.stringify(isViewMode));
+  }
+
   // OnSearchKeyEntered(event) {
   //   if ( event.target.value == '') {
   //     this.searchFlag = false;

@@ -9,6 +9,7 @@ import { FormBuilder, FormControl, FormGroup, FormArray } from '@angular/forms';
 })
 export class GroupComponent implements OnInit {
   count = [1,2];
+  isViewMode: boolean;
   constructor(private fb: FormBuilder) { }
   @Input('groups') groups: FormArray;
   @Input('caseInfo') caseInfo: FormGroup;
@@ -17,6 +18,7 @@ export class GroupComponent implements OnInit {
   ngOnInit() {
   console.log(this.groups);
   console.log(this.type);
+  this.isViewMode = JSON.parse(sessionStorage.getItem('isViewMode'));
   }
 
   getCntrcts(form){

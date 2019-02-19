@@ -1,22 +1,25 @@
 <div class="row pt-1" [formGroup]="caseInfo">
     <div class="col-sm-3">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Case Name"  formControlName="caseName">
+        <input [readonly]="isViewMode" matInput placeholder="Case Name"  formControlName="caseName">
       </mat-form-field>
     </div>
     <div class="col-sm-3">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Ein Number" formControlName="einNumber">
+          <input matInput placeholder="Ein Number" formControlName="einNumber" [readonly]="isViewMode">
         </mat-form-field>
     </div>
     <div class="col-sm-3">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Case Effective Date" formControlName="caseEffDate">
+            <input [readonly]="isViewMode" matInput [matDatepicker]="picker" placeholder="Case Effective Date" formControlName="caseEffDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+          <!-- <input matInput placeholder="Case Effective Date" formControlName="caseEffDate"> -->
         </mat-form-field>
     </div>
     <div class="col-sm-3">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Case Status Code" formControlName="caseSttsCd">
+          <input [readonly]="isViewMode" matInput placeholder="Case Status Code" formControlName="caseSttsCd">
         </mat-form-field>
     </div>
   </div>
