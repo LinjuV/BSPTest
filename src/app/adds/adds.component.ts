@@ -92,8 +92,16 @@ createBillingEntities() : FormGroup{
     billingEntityType : new FormControl(),
     billingEntitySttsCd : new FormControl(),
     billCopiesNbr : new FormControl(),
-    billFrequency : new FormControl()
+    billFrequency : new FormControl(),
+    products:this.fb.array([this.createProducts()])
   });
+}
+
+createProducts(): FormGroup{
+  return this.fb.group({
+    contract:new FormControl(''),
+    coverageType:new FormControl()
+  })
 }
 
 createBrokers() : FormGroup{

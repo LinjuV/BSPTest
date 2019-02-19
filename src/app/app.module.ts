@@ -17,6 +17,7 @@ import { HeaderComponent } from './case-info/header/header.component';
 import { AddsComponent } from './adds/adds.component';
 import { CaseDetailsComponent } from './case-info/case-details/case-details.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const routes : Routes = [
@@ -56,6 +57,7 @@ const routes : Routes = [
     MatDividerModule,
     MatExpansionModule,
     MatIconModule,
+    MatCheckboxModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

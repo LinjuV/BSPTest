@@ -1,3 +1,4 @@
+import { Product } from './product';
 export class BillingEntities {
     billingEntityEffDate:string;
     billingEntityName:string;
@@ -5,5 +6,6 @@ export class BillingEntities {
     billingEntitySttsCd:string;
     billCopiesNbr:string;
     billFrequency:string;
+    products:Product[];
 
 }

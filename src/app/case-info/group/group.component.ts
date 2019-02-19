@@ -15,12 +15,10 @@ export class GroupComponent implements OnInit {
   @Input('type') type:string;
   
   ngOnInit() {
-  console.log(this.groups);
-  console.log(this.type);
+  
   }
 
   getCntrcts(form){
-    console.log(form);
     return form.controls.cntrcts.controls;
   }
 
